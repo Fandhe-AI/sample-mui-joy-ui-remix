@@ -8,11 +8,15 @@ import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
 
+import { JoyUiProvider } from "~/joy-ui/provider";
+
 startTransition(() => {
   hydrateRoot(
     document,
     <StrictMode>
-      <RemixBrowser />
+      <JoyUiProvider>
+        <RemixBrowser />
+      </JoyUiProvider>
     </StrictMode>
   );
 });

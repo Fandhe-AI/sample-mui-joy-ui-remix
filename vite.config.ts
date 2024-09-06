@@ -20,4 +20,9 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  ssr: {
+    noExternal: [
+      "@mui/joy",
+    ],
+  },
 });

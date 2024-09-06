@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import Button from "@mui/joy/Button/Button.js";
+import Button from "@mui/joy/Button";
 
 import type { MetaFunction } from "@remix-run/node";
 
@@ -13,11 +13,11 @@ export const meta: MetaFunction = () => {
 const Index = () => {
   return (
     <div>
-      <h1>Welcome to Remix</h1>
+      <h1>About</h1>
       <ul>
         <li>
-          <Button component={Link} to="/about/">
-            About
+          <Button component={Link} to="/">
+            Top
           </Button>
         </li>
       </ul>
