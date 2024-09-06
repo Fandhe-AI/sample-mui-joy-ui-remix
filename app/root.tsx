@@ -6,23 +6,20 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+import style from "~/styles/common.scss?url";
+
+import type { LinksFunction } from "@remix-run/node";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: style }];
+
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        /> */}
+        <link rel="stylesheet" href="/destyle.min.css" />
         <Links />
       </head>
       <body>
@@ -32,8 +29,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </body>
     </html>
   );
-}
+};
 
-export default function App() {
+const App = () => {
   return <Outlet />;
-}
+};
+
+export default App;
